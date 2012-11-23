@@ -25,7 +25,7 @@ function engine() {
 		parser::parseData();
 	}
 	if (self::$exp) {
-		echo self::$exp;
+		echo self::$exp."...";
 	}
 }
 

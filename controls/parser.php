@@ -11,6 +11,7 @@ function __construct() {
 
 function parseData() {
 	if (import::$data) {
+		if (!tobase::gentm()) { return false; }		
 		foreach (explode("\r\n",import::$data) as $line) {
 			if (self::parseLine($line)) {
 				tobase::checkLine();
@@ -21,6 +22,7 @@ function parseData() {
 				echo "]";*/
 			}
 		}
+		echo "done...";
 	}
 }
 

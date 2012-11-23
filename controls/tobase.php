@@ -10,8 +10,6 @@ function __construct() {
 }
 
 function checkLine() {
-	if (!self::gentm()) { return false; }
-	echo "go!";
 	if (self::cardExists()) {
 		self::updateCard();
 	} else {
@@ -47,7 +45,6 @@ function insertCard() {
 	if (query(sql::insertCard())) {
 		return true;
 	}
-	echo sql::insertCard();
 	return false;
 }
 
