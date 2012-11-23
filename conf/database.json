@@ -1,0 +1,25 @@
+{
+	"settings":
+	{
+		"type_of_data_return":"object",
+		"collection_of_data_return":"array",
+		"limit_of_rows":1000
+	},
+	"default":
+	{
+		"connection":"leo"
+	},
+	"connections":
+	{
+		"leo":
+		{
+			"alias":"leo",
+			"type":"mysql",
+			"path":"localhost",
+			"dbname":"card_leonardo-picasso_ru",
+			"login":"leonardo_picasso",
+			"password":"97yhHY049f-fg4f345",
+			"charset":"UTF-8"
+		}
+	}
+}

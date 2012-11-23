@@ -14,8 +14,17 @@ function __construct() {
 function engine() {
 	if (self::loadParams()) {
 		if (self::loadData()) {
-			self::showData();
+			if (url::$show) {
+				self::showData();
+			}
 		}
+	}
+	if (url::$test) {
+		echo "test";
+		self::testData();
+	}
+	if (self::$data) {		
+		parser::parseData();
 	}
 	if (self::$exp) {
 		echo self::$exp;
@@ -57,6 +66,8 @@ function loadParams() {
 		} else { 
 			self::$exp="file not uploaded";
 		} 
+	} else { 
+		self::$exp="file not uploaded";
 	}
 	return false;
 }
@@ -79,6 +90,12 @@ function showData() {
 	} else { 
 		self::$exp="data is null";
 	}
+}
+
+function testData($s="") {
+	$s.="Абромян Жираер;88888888;68100;1836;1398;438;1helv;\r\n";
+	$s.="Дмитрий Мартынов;10000101;28100;1454;1253;244;2fegv;\r\n";
+	self::$data=$s;	
 }
 
 } ?>
