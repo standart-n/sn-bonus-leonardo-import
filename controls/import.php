@@ -13,15 +13,13 @@ function __construct() {
 
 function engine() {
 	if (self::loadParams()) {
-		if (self::loadData()) {
-			if (url::$show) {
-				self::showData();
-			}
-		}
+		self::loadData();
 	}
 	if (url::$test) {
-		echo "test";
 		self::testData();
+	}
+	if (url::$show) {
+		self::showData();
 	}
 	if (self::$data) {		
 		parser::parseData();

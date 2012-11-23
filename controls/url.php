@@ -23,21 +23,7 @@ function __construct() {
 	}
 	if (isset($_REQUEST["show"])) {
 		self::$show=true;
-	}
-	
-	if (isset($_REQUEST["lastname"])) {
-		self::$lastname=trim(strval($_REQUEST["lastname"]));
-	}
-	if (isset($_REQUEST["firstname"])) {
-		self::$firstname=trim(strval($_REQUEST["firstname"]));
-	}
-	if (isset($_REQUEST["patronymic"])) {
-		self::$patronymic=trim(strval($_REQUEST["patronymic"]));
-	}
-	if (isset($_REQUEST["email"])) {
-		self::$email=trim(strval($_REQUEST["email"]));
-	}
-	
+	}	
 	
 }
 

@@ -1,14 +1,24 @@
 <?php class parser extends sn {
 	
-function __construct() {
+public static $error;
+public static $line_ms;
 
+	
+function __construct() {
+	self::$line_ms=array();
+	self::$error=array();
 }
 
 function parseData() {
 	if (import::$data) {
 		foreach (explode("\r\n",import::$data) as $line) {
-			if (self::pareLine($line)) {
+			if (self::parseLine($line)) {
 				
+				//print_r(self::$line_ms);
+			/*} else {
+				echo "[";
+				var_dump(line::$valid);
+				echo "]";*/
 			}
 		}
 	}
@@ -16,8 +26,13 @@ function parseData() {
 
 function parseLine($line=null,$ms=array(),$error=array()) {
 	if ($line) {
-		if (strlen($line)>10) {
-			$ms=explode(";",$line);
+		if ($line!="") {
+			if (strlen($line)>10) {
+				self::$line_ms=explode(";",$line);
+				if (line::checkLine()) {
+					return true;
+				}
+			}
 		}
 	}
 	return false;
