@@ -15,7 +15,7 @@ function parseData() {
 		foreach (explode("\r\n",import::$data) as $line) {
 			if (self::parseLine($line)) {
 				tobase::checkLine();
-				//print_r(self::$line_ms);
+				print_r(self::$line_ms);
 			/*} else {
 				echo "[";
 				var_dump(line::$valid);

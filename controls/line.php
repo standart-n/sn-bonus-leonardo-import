@@ -48,7 +48,7 @@ function validate() {
 function checkName($id=null,$type=null,$value=null,$exp=null,$error=true) {
 	if (!parser::$line_ms[$id]) { $exp="отсутствуют данные!"; } else {
 		if (!isset(parser::$line_ms[$id])) { $exp="отсутствуют данные!"; } else {
-			$value=strval(trim(parser::$line_ms[$id]));
+			$value=iconv("cp1251","utf-8",strval(trim(parser::$line_ms[$id])));
 		}
 	}
  	if (!$value) { $exp="отсутствуют данные!"; } else {

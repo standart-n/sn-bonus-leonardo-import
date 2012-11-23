@@ -17,7 +17,7 @@ function checkLine() {
 	}
 	
 	if (self::pwdExists()) {
-		self::updatePwd();
+		//self::updatePwd();
 	} else {
 		self::insertPwd();
 	}	
