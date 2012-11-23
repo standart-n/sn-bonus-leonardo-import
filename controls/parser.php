@@ -13,7 +13,7 @@ function parseData() {
 	if (import::$data) {
 		foreach (explode("\r\n",import::$data) as $line) {
 			if (self::parseLine($line)) {
-				
+				tobase::checkLine();
 				//print_r(self::$line_ms);
 			/*} else {
 				echo "[";

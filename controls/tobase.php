@@ -1,5 +1,6 @@
 <?php class tobase extends sn {
 	
+public static $tm;
 public static $error;
 public static $line_ms;
 
@@ -10,6 +11,7 @@ function __construct() {
 
 function checkLine() {
 	if (!self::gentm()) { return false; }
+	echo "go!";
 	if (self::cardExists()) {
 		self::updateCard();
 	} else {
@@ -45,6 +47,7 @@ function insertCard() {
 	if (query(sql::insertCard())) {
 		return true;
 	}
+	echo sql::insertCard();
 	return false;
 }
 
@@ -72,7 +75,10 @@ function updatePwd() {
 
 function gentm() {
 	if (query(sql::gentm())) {
-		return true;
+		self::$tm=mysql_insert_id();
+		if (self::$tm>0) {
+			return true;
+		}
 	}
 	return false;
 }
