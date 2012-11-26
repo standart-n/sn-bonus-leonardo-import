@@ -41,7 +41,7 @@ function validate() {
 	self::checkBonus(3,"bonus_all");
 	self::checkBonus(4,"bonus_used");
 	self::checkBonus(5,"bonus_exists");
-	self::checkPassword(6,"password");
+	//self::checkPassword(6,"password");
 	if (sizeof(self::$valid)>0) { return false; } else { return true; }
 }
 

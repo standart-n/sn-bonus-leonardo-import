@@ -16,11 +16,11 @@ function checkLine() {
 		self::insertCard();
 	}
 	
-	if (self::pwdExists()) {
+	/*if (self::pwdExists()) {
 		self::updatePwd();
 	} else {
 		self::insertPwd();
-	}	
+	}*/	
 }
 
 function cardExists() {
